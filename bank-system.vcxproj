@@ -125,14 +125,20 @@
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="bank-system.cpp" />
+    <ClCompile Include="DataSource.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="Client.h" />
+    <ClInclude Include="DataSource.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="validation.h" />
   </ItemGroup>

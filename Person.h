@@ -79,6 +79,13 @@ public:
 	string getPassword() const {
 		return password;
 	}
+	//====================================================================================
+	void setId(int id) {
+		this->id = id;
+	}
+	int getId() const {
+		return id;
+	}
 
 
 };
