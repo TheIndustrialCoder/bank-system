@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "Validation.h"
 
 using namespace std;
@@ -13,15 +12,23 @@ protected:
 
 public:
 	// Constructor
+	Person() {
+		id = 0;
+		name = "";
+		password = "";
+	}
 
-	Person(string name, string password) {
-		Validation::validateName(name);
-		Validation::validatePassword(password);
-		this->name = name;
-		this->password = password;
+	Person(int id, string name, string password) {
+		setId(id);
+		setName(name);
+		setPassword(password);
 	}
 
 	// Setters
+	void setId(int id) {
+		this->id = id;
+	}
+
 	void setName(string name) {
 		Validation::validateName(name);
 		this->name = name;
@@ -46,7 +53,11 @@ public:
 	}
 
 	// Methods
-	virtual string display() = 0;
+	void display() {
+		cout << "ID : " << id << endl;
+		cout << "Name : " << name << endl;
+		cout << "Password : " << password << endl;
+	}
 
 };
 

@@ -1,8 +1,5 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include "Person.h"
-#include "Validation.h"
 using namespace std;
 
 class Client : public Person
@@ -14,11 +11,14 @@ private:
 
 public:
 	// Constructor
-	Client(string name, string password, double balance) : Person(name, password)
+	Client() : Person()
 	{
-		Validation::validateBalance(balance);
-		this->balance = balance;
-		this->id = 0 + idCounter++;
+		balance = 0.0;
+	}
+
+	Client(int id, string name, string password, double balance) : Person(id, name, password)
+	{
+		setBalance(balance);
 	}
 
 	// Setters
@@ -37,6 +37,7 @@ public:
 	// Methods
 	void deposit(double amount)
 	{
+		Validation::validateAmount(amount);
 		balance += amount;
 	}
 
@@ -48,8 +49,7 @@ public:
 
 	void transferTo(Client& recipient, double amount)
 	{
-		Validation::validateWithdraw(balance, amount);
-		balance -= amount;
+		withdraw(amount);
 		recipient.deposit(amount);
 	}
 
@@ -57,9 +57,9 @@ public:
 		cout << "Current balance: " << balance << endl;
 	}
 
-	string display()
-	{
-		return "Client Info: ID: " + to_string(id) + ", Name: " + getName() + ", Balance: " + to_string(balance);
+	void display() {
+		Person::display();
+		cout << "Balance: " << balance << endl;
 	}
 };
 

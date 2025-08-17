@@ -1,8 +1,5 @@
 #pragma once
-#include <string>
-#include <iostream>
 #include "Person.h"
-#include "Validation.h"
 using namespace std;
 
 class Employee : public Person
@@ -14,11 +11,14 @@ private:
 
 public:
 	// Constructor
-	Employee(string name, string password, double salary) : Person(name, password)
+	Employee() : Person()
 	{
-		Validation::validateSalary(salary);
-		this->salary = salary;
-		this->id = 0 + idCounter++;
+		salary = 0.0;
+	}
+
+	Employee(int id, string name, string password, double salary) : Person(id, name, password)
+	{
+		setSalary(salary);
 	}
 
 	// Setters
@@ -36,9 +36,10 @@ public:
 
 	// Methods
 	
-	string display()
+	void display()
 	{
-		return "Employee Info : ID " + to_string(id) + ", Name: " + getName() + ", Salary: " + to_string(salary);
+		Person::display();
+		cout << "Salary: " << salary << endl;
 	}
 };
 

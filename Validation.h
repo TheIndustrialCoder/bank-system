@@ -29,11 +29,19 @@ public:
 	}
 };
 
+class AmountException : public exception {
+	public:
+	const char* what() const throw()
+	{
+		return "Amount must be greater than 0";
+	}
+};
+
 class WithdrawException : public exception {
 public:
 	const char* what() const throw()
 	{
-		return "Withdrawal amount exceeds available balance";
+		return "Withdrawal amount exceeds available balance or amount is invalid";
 	}
 };
 
@@ -73,11 +81,18 @@ public:
 		}
 	}
 
+	static void validateAmount(double amount) {
+		if (amount <= 0) {
+			throw AmountException();
+		}
+	}
+
 	static void validateWithdraw(double balance, double amount) {
+		validateAmount(amount);
+
 		if (amount >= balance) {
 			throw WithdrawException();
 		}
-		Validation::validateBalance(balance - amount);
 	}
 
 	static void validateSalary(double salary) {
