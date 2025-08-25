@@ -1,9 +1,18 @@
 #include <iostream>
+#include "Employee.h"
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
-    cout << "zizo\n";
-    cout << "Rana\n";
+	string name = "Ali", password = "123";
+	double balance = 500;
+	/*cout << "Enter your name: ";
+	getline(cin, name);
+	cout << "Enter your password: ";
+	getline(cin, password);
+	cout << "Enter your initial balance: ";
+	cin >> balance;*/
+	Employee client(name, password, balance);
+	client.getSalary();
+
 }
