@@ -21,6 +21,11 @@ public:
 		setBalance(balance);
 	}
 
+	Client(string name, string password, double balance) : Person(name, password)
+	{
+		setBalance(balance);
+	}
+
 	// Setters
 	void setBalance(double balance)
 	{

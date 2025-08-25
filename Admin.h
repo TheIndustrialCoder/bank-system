@@ -14,5 +14,7 @@ public:
 	Admin() : Employee() {}
 
 	Admin(int id, string name, string password, double salary) : Employee(id, name, password, salary) {}
+
+	Admin(string name, string password, double salary) : Employee(name, password, salary) {}
 };
 

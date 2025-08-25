@@ -128,6 +128,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="DataSourceInterface.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="FileHelper.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Client.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="FileHelper.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Person.h" />
@@ -146,6 +148,7 @@
   <ItemGroup>
     <Text Include="Admins.txt" />
     <Text Include="Clients.txt" />
+    <Text Include="ClientsLastIdUsed.txt" />
     <Text Include="Employees.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

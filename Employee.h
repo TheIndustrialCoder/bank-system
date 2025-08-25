@@ -21,6 +21,11 @@ public:
 		setSalary(salary);
 	}
 
+	Employee(string name, string password, double salary) : Person(name, password)
+	{
+		setSalary(salary);
+	}
+
 	// Setters
 	void setSalary(double salary)
 	{

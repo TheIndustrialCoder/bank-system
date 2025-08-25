@@ -24,6 +24,11 @@ public:
 		setPassword(password);
 	}
 
+	Person(string name, string password) {
+		setName(name);
+		setPassword(password);
+	}
+
 	// Setters
 	void setId(int id) {
 		this->id = id;

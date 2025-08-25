@@ -42,6 +42,9 @@
     <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -68,10 +71,14 @@
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FileHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Clients.txt" />
     <Text Include="Employees.txt" />
     <Text Include="Admins.txt" />
+    <Text Include="ClientsLastIdUsed.txt" />
   </ItemGroup>
 </Project>
