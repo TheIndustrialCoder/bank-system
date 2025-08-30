@@ -10,24 +10,20 @@ private:
 
 public:
 	// Constructor
-	Client() : Person()
-	{
+	Client() : Person() {
 		balance = 0.0;
 	}
 
-	Client(int id, string name, string password, double balance) : Person(id, name, password)
-	{
+	Client(int id, string name, string password, double balance) : Person(id, name, password) {
 		setBalance(balance);
 	}
 
-	Client(string name, string password, double balance) : Person(name, password)
-	{
+	Client(string name, string password, double balance) : Person(name, password) {
 		setBalance(balance);
 	}
 
 	// Setters
-	void setBalance(double balance)
-	{
+	void setBalance(const double balance) {
 		if (Validation::validateBalance(balance))
 			this->balance = balance;
 		else
@@ -35,26 +31,22 @@ public:
 	}
 
 	// Getters
-	double getBalance()
-	{
+	double getBalance() const {
 		return balance;
 	}
 
 	// Methods
-	void deposit(double amount)
-	{
+	void deposit(const double amount) {
 		if(Validation::validateAmount(amount))
 			balance += amount;
 	}
 
-	void withdraw(double amount)
-	{
+	void withdraw(const double amount) {
 		if(Validation::validateWithdraw(balance, amount))
 			balance -= amount;
 	}
 
-	void transferTo(Client& recipient, double amount)
-	{
+	void transferTo(Client& recipient, double amount) {
 		withdraw(amount);
 		recipient.deposit(amount);
 	}

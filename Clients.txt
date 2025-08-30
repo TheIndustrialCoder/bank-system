@@ -1,0 +1,6 @@
+6,Bob Smith,clientPass1,3000
+7,YAoooAY,newPass123,2000
+8,Diana Prince,clientPass2,7000
+9,Ethan Hunt,clientPass11,9000
+10,Frank Castle,clientPass22,11000
+11,Grace Hopper,clientPass33,13000

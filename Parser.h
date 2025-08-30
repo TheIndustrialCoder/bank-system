@@ -1,6 +1,5 @@
 #pragma once
 #include "Client.h"
-#include "Employee.h"
 #include "Admin.h"
 #include <vector>
 using namespace std;
@@ -8,7 +7,7 @@ using namespace std;
 class Parser
 {
 private:
-	static char delimiter;
+	static const char delimiter = ',';
 public:
 	static vector<string> split(string line) {
 		vector<string> data;

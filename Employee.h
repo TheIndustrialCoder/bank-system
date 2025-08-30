@@ -1,11 +1,14 @@
 #pragma once
 #include "Person.h"
-using namespace std;
+
+class DataSourceInterface;
+class Client;
 
 class Employee : public Person
 {
 private:
 	// Attributes
+	DataSourceInterface* dataSource;
 	double salary;
 
 public:
@@ -15,18 +18,12 @@ public:
 		salary = 0.0;
 	}
 
-	Employee(int id, string name, string password, double salary) : Person(id, name, password)
-	{
-		setSalary(salary);
-	}
+	Employee(int id, string name, string password, double salary);
 
-	Employee(string name, string password, double salary) : Person(name, password)
-	{
-		setSalary(salary);
-	}
+	Employee(string name, string password, double salary);
 
 	// Setters
-	void setSalary(double salary)
+	void setSalary(const double salary)
 	{
 		if(Validation::validateSalary(salary))
 			this->salary = salary;
@@ -34,8 +31,10 @@ public:
 			this->salary = 0;
 	}
 
+	void setDataSource(DataSourceInterface* ds);
+
 	// Getters
-	double getSalary()
+	double getSalary () const
 	{
 		return salary;
 	}
@@ -47,4 +46,13 @@ public:
 		Person::display();
 		cout << "Salary: " << salary << endl;
 	}
+
+	// Services
+	void addClient(Client& client);
+
+	Client* searchClient(int clientId);
+
+	void listClients();
+
+	void editClient(int clientId, const string& newName, const string& newPassword, double newBalance);
 };

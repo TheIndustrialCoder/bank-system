@@ -25,35 +25,36 @@ public:
 	}
 
 	Person(string name, string password) {
+		id = 0;
 		setName(name);
 		setPassword(password);
 	}
 
 	// Setters
-	void setId(int id) {
+	void setId(const int id) {
 		this->id = id;
 	}
 
-	void setName(string name) {
+	void setName(const string name) {
 		if(Validation::validateName(name))
 			this->name = name;
 	}
 
-	void setPassword(string password) {
+	void setPassword(const string password) {
 		if(Validation::validatePassword(password))
 			this->password = password;
 	}
 
 	// Getters
-	int getId() {
+	int getId() const {
 		return id;
 	}
 
-	string getName() {
+	string getName() const {
 		return name;
 	}
 
-	string getPassword() {
+	string getPassword() const {
 		return password;
 	}
 

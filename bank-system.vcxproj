@@ -147,8 +147,8 @@
   <ItemGroup>
     <Text Include="AdminIdCount.txt" />
     <Text Include="Admins.txt" />
-    <Text Include="ClientIdCount.txt" />
     <Text Include="Clients.txt" />
+    <Text Include="ClientsIdCount.txt" />
     <Text Include="EmployeeIdCount.txt" />
     <Text Include="Employees.txt" />
   </ItemGroup>
